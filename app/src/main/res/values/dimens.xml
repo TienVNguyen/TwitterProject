@@ -1,0 +1,23 @@
+<!--
+  ~ Copyright (c) 2016. Self Training Systems, Inc - All Rights Reserved
+  ~ Unauthorized copying of this file, via any medium is strictly prohibited
+  ~ Proprietary and confidential
+  ~ Written by TienVNguyen <tien.workinfo@gmail.com - tien.workinfo@icloud.com>, October 2015
+  -->
+
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">8dp</dimen>
+    <dimen name="activity_vertical_margin">8dp</dimen>
+    <dimen name="activity_horizontal_padding">8dp</dimen>
+    <dimen name="activity_vertical_padding">8dp</dimen>
+    <dimen name="activity_margin_message">24dp</dimen>
+    <dimen name="activity_padding_message">24dp</dimen>
+    <dimen name="share_padding">4dp</dimen>
+    <dimen name="card_elevation">6dp</dimen>
+    <dimen name="card_layout_width">200dp</dimen>
+    <dimen name="text_size_message">16sp</dimen>
+    <dimen name="text_size_message_title">24sp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="card_corner_radius">8dp</dimen>
+</resources>
