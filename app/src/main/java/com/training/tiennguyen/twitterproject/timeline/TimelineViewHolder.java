@@ -14,6 +14,8 @@ import android.widget.TextView;
 
 import com.training.tiennguyen.twitterproject.R;
 
+import org.sufficientlysecure.htmltextview.HtmlTextView;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -24,15 +26,21 @@ import butterknife.ButterKnife;
  */
 public class TimelineViewHolder extends RecyclerView.ViewHolder {
     @BindView(R.id.itemIvProfileImageUrl)
-    protected ImageView profileImageUrl;
+    ImageView profileImageUrl;
+    @BindView(R.id.itemHtmlTvUser)
+    HtmlTextView user;
     @BindView(R.id.itemTvText)
-    protected TextView text;
-    @BindView(R.id.itemTvCreatedAt)
-    protected TextView createdAt;
+    TextView text;
+    @BindView(R.id.itemImgTweet)
+    ImageView imgTweet;
+    @BindView(R.id.itemImgLike)
+    ImageView imgLike;
+    @BindView(R.id.itemTxtLikeNumber)
+    TextView txtLikeNumber;
     @BindView(R.id.itemIvShared)
-    protected ImageView shared;
+    ImageView shared;
 
-    public TimelineViewHolder(View itemView) {
+    TimelineViewHolder(View itemView) {
         super(itemView);
 
         ButterKnife.bind(this, itemView);

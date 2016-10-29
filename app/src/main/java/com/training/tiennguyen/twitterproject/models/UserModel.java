@@ -8,11 +8,6 @@
 package com.training.tiennguyen.twitterproject.models;
 
 import com.google.gson.annotations.SerializedName;
-import com.raizlabs.android.dbflow.annotation.Column;
-import com.raizlabs.android.dbflow.annotation.PrimaryKey;
-import com.raizlabs.android.dbflow.annotation.Table;
-import com.raizlabs.android.dbflow.structure.BaseModel;
-import com.training.tiennguyen.twitterproject.utils.database.UserDatabase;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -35,6 +30,9 @@ public class UserModel {
     String defaultImage;
     @SerializedName("profile_image_url")
     String profileImageUrl;
+    @SerializedName("favourites_count")
+    int favouritesCount;
+
 
     public UserModel() {
         super();
@@ -53,6 +51,7 @@ public class UserModel {
             this.name = object.getString("name");
             this.defaultImage = object.getString("default_profile");
             this.profileImageUrl = object.getString("profile_image_url");
+            this.favouritesCount = object.getInt("favourites_count");
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -62,7 +61,7 @@ public class UserModel {
      * fromJson
      *
      * @param userJson {@link JSONObject}
-     * @return {@link ArrayList <UserModel>}
+     * @return {@link UserModel}
      */
     public static UserModel fromJson(final JSONObject userJson) {
         return new UserModel(userJson);
@@ -125,5 +124,13 @@ public class UserModel {
 
     public void setProfileImageUrl(String profileImageUrl) {
         this.profileImageUrl = profileImageUrl;
+    }
+
+    public int getFavouritesCount() {
+        return favouritesCount;
+    }
+
+    public void setFavouritesCount(int favouritesCount) {
+        this.favouritesCount = favouritesCount;
     }
 }

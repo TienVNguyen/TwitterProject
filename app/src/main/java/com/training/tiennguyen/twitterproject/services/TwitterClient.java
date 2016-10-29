@@ -48,13 +48,14 @@ public class TwitterClient extends OAuthBaseClient {
     /**
      * getHomeTimeLine
      *
+     * @param count           {@link Integer}
      * @param page            {@link Integer}
      * @param responseHandler {@link AsyncHttpResponseHandler}
      */
-    public void getHomeTimeLine(final int page, final AsyncHttpResponseHandler responseHandler) {
+    public void getHomeTimeLine(final int count, final int page, final AsyncHttpResponseHandler responseHandler) {
         final String apiUrl = getApiUrl("statuses/home_timeline.json");
         final RequestParams params = new RequestParams();
-        params.put("count", 10);
+        params.put("count", String.valueOf(count));
         params.put("since_id", 1);
         params.put("page", String.valueOf(page));
         getClient().get(apiUrl, params, responseHandler);
@@ -67,7 +68,7 @@ public class TwitterClient extends OAuthBaseClient {
      * @param responseHandler {@link AsyncHttpResponseHandler}
      */
     public void postTweet(final String body, final AsyncHttpResponseHandler responseHandler) {
-        final String apiUrl = getApiUrl("statues/update.json");
+        final String apiUrl = getApiUrl("statuses/update.json");
         final RequestParams params = new RequestParams();
         params.put("status", body);
         getClient().post(apiUrl, params, responseHandler);

@@ -8,4 +8,15 @@
 <resources>
     <string name="app_name">Twitter Project</string>
     <string name="login_label">Log in</string>
+    <string name="like_number">123</string>
+    <string name="title_activity_timeline">Timeline Activity</string>
+    <string name="title_activity_post">Post Activity</string>
+    <string name="image_content_description">Image Content Description</string>
+    <string name="item_user">User</string>
+    <string name="item_created_at">10 minutes</string>
+    <string name="item_text">Body Text</string>
+    <string name="button_tweet">Tweet</string>
+    <string name="login_issue_message">Login Issue</string>
+    <string name="menu_tweet">Tweet</string>
+    <string name="edit_tweet">Tweet yours</string>
 </resources>

@@ -7,68 +7,103 @@
 
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="@dimen/activity_horizontal_margin"
     android:background="?android:attr/selectableItemBackground"
     android:orientation="horizontal"
     app:cardCornerRadius="@dimen/card_corner_radius"
     app:cardElevation="@dimen/card_elevation"
     app:cardPreventCornerOverlap="true"
-    app:cardUseCompatPadding="true"
-    tools:layout_width="@dimen/card_layout_width">
+    app:cardUseCompatPadding="true">
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <ImageView
             android:id="@+id/itemIvProfileImageUrl"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
+            android:layout_width="@dimen/profile_image"
+            android:layout_height="@dimen/profile_image"
             android:adjustViewBounds="true"
             android:contentDescription="@string/app_name"
-            android:src="@drawable/ic_launcher"
-            android:scaleType="fitCenter" />
-
-        <TextView
-            android:id="@+id/itemTvText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/itemIvProfileImageUrl"
-            android:ellipsize="end"
-            android:maxLines="3"
-            android:text="fefsdfsd"
-            android:padding="@dimen/activity_horizontal_padding" />
-
-        <View
-            android:id="@+id/vHorizontalLine"
-            android:layout_width="fill_parent"
-            android:layout_height="1dp"
-            android:background="@color/cardview_dark_background"
-            android:layout_below="@id/itemTvText" />
-
-        <TextView
-            android:id="@+id/itemTvCreatedAt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/vHorizontalLine"
-            android:ellipsize="end"
-            android:maxLines="3"
             android:padding="@dimen/activity_horizontal_padding"
-            android:text="fefsdfsd"
-            android:textStyle="italic" />
+            android:src="@drawable/ic_launcher" />
 
-        <ImageView
-            android:id="@+id/itemIvShared"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_below="@id/vHorizontalLine"
-            android:padding="@dimen/share_padding"
-            android:src="@android:drawable/ic_menu_share" />
-    </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <org.sufficientlysecure.htmltextview.HtmlTextView
+                android:id="@+id/itemHtmlTvUser"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:paddingTop="@dimen/activity_horizontal_padding"
+                android:text="@string/item_user"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/itemTvText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/itemHtmlTvUser"
+                android:paddingTop="@dimen/activity_horizontal_padding"
+                android:text="@string/item_text"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/itemImgTweet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/itemTvText"
+                android:contentDescription="@string/image_content_description"
+                android:paddingTop="@dimen/activity_horizontal_padding"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/itemIvReply"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/itemImgTweet"
+                android:contentDescription="@string/image_content_description"
+                android:paddingTop="@dimen/activity_horizontal_padding"
+                app:srcCompat="@drawable/icon_reply" />
+
+            <ImageView
+                android:id="@+id/itemImgLike"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/itemImgTweet"
+                android:layout_centerHorizontal="true"
+                android:contentDescription="@string/image_content_description"
+                android:paddingTop="@dimen/activity_horizontal_padding"
+                android:text="@string/like_number"
+                app:srcCompat="@drawable/icon_heart_outline" />
+
+            <TextView
+                android:id="@+id/itemTxtLikeNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/itemImgTweet"
+                android:layout_centerHorizontal="true"
+                android:layout_toEndOf="@id/itemImgLike"
+                android:layout_toRightOf="@id/itemImgLike"
+                android:paddingBottom="@dimen/share_padding"
+                android:paddingTop="@dimen/activity_horizontal_padding"
+                android:text="@string/like_number" />
+
+            <ImageView
+                android:id="@+id/itemIvShared"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/itemImgTweet"
+                android:contentDescription="@string/image_content_description"
+                android:paddingTop="@dimen/activity_horizontal_padding"
+                app:srcCompat="@drawable/icon_share" />
+        </RelativeLayout>
+    </LinearLayout>
 </android.support.v7.widget.CardView>

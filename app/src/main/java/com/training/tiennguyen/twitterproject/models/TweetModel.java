@@ -52,7 +52,7 @@ public class TweetModel {
      * fromJson
      *
      * @param tweetJson {@link JSONObject}
-     * @return {@link ArrayList <TweetModel>}
+     * @return {@link TweetModel}
      */
     public static TweetModel fromJson(final JSONObject tweetJson) {
         return new TweetModel(tweetJson);

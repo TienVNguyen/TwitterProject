@@ -18,12 +18,17 @@ import com.training.tiennguyen.twitterproject.R;
 import com.training.tiennguyen.twitterproject.services.TwitterClient;
 import com.training.tiennguyen.twitterproject.timeline.TimelineActivity;
 
-
+/**
+ * {@link LoginActivity}
+ *
+ * @author TienVNguyen
+ */
 public class LoginActivity extends OAuthLoginActionBarActivity<TwitterClient> {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_login);
     }
 
@@ -37,11 +42,12 @@ public class LoginActivity extends OAuthLoginActionBarActivity<TwitterClient> {
     public void onLoginSuccess() {
         final Intent i = new Intent(this, TimelineActivity.class);
         startActivity(i);
+        finish();
     }
 
     @Override
     public void onLoginFailure(Exception e) {
-        Toast.makeText(this, "Connection Issue", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, R.string.login_issue_message, Toast.LENGTH_SHORT).show();
         e.printStackTrace();
     }
 
